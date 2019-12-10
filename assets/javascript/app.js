@@ -160,12 +160,12 @@ function displayMovie(movie) {
     console.log(title + " xxxxxxxx");
 
     $("#movieName").text(title);
-    $(".genre").text("Genre: " + genre);
+    $(".genre").text(genre);
     $(".rating").text("Rating: " + rating);
     $(".runtime").text("Run Time: " + runTime);
     $(".releaseDate").text("Release Date: " + releaseDate);
-    $(".synopsis").text("Summary: " + summary);
-    $(".cast").text("Actors: " + actors);
+    $(".synopsis").text(summary);
+    $(".cast").text("Cast: " + actors);
     $(".directors").text("Director(s): " + director);
     $(".movie-poster").text("");
     $(".movie-poster").append(poster);
@@ -203,7 +203,7 @@ $(".movieCat").on("click", function (e) {
 
     $.each(response.result.items, function (index, item) {
       $(".movie-trailer-video").empty();
-      $(".movie-trailer-video").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + item.id.videoId + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+      $(".movie-trailer-video").append('<iframe width="560" height="475" src="https://www.youtube.com/embed/' + item.id.videoId + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
     });
   });
   return false;

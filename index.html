@@ -11,9 +11,18 @@
         <title>OKCinema</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/reset.css">
+        <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
         <link rel="stylesheet" href="assets/css/style.css">
+        <style>
+                @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+                </style>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://apis.google.com/js/client.js"></script>
@@ -21,103 +30,125 @@
 
 <body onload="init();">
         <!-- Start of header/navbar   -->
-        <div class="d-flex justify-content-between flex-row header mb-3">
-                <div class="pt-5">
-                        <button type="button" class="btn btn-secondary lucky-button">I'm Feeling Lucky!</button>
-                </div>
-                <img id="logo" src="assets/images/okCinemaLogo.png" alt="OK-Cinema">
+        <div class="container" id="header">
+                <a href="/index.html"><img id="logo" src="assets/images/okCinemaLogo.png" alt="OK-Cinema"></a>
                 <form id="ytForm">
                         <div class="form-group">
-                                <div class="input-group mb-3 pt-5 mr-2">
+                                <div class="input-group">
                                         <input type="text" id="textBox" class="form-control search-input"
                                                 placeholder="Search For a Movie!" aria-label="Movie-search"
                                                 aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                                <button id="submitBtn" class="btn btn-primary searchButton"
+                                                <button type="button" id="submitBtn" class="btn searchButton"
                                                         type="submit">Search</button>
                                         </div>
                                 </div>
                         </div>
                 </form>
+                <div>
+                        <button type="button" class="btn btn-dark lucky-button">I'm Feeling Lucky!</button>
+                </div>
         </div>
+        
         <!-- Start of of movie content -->
-        <div class="container movie-screen">
-                <div class="movie-title-box d-flex flex-column mb-1">
-                        <h1 class="title"> Title: <span id="movieName"></span></h1>
-                        <h3 class="genre"> Genre: </h3>
-                </div>
-
-                <div class="r3-box d-flex flex-row justify-content-around mb-1">
-                        <h3 class="rating">Rating:</h3>
-                        <h3 class="runtime">Runtime:</h3>
-                        <h3 class="releaseDate">Release:</h3>
-                </div>
-                <h3 class="synopsis">Summary: </h3>
-
-                <div class="cast-directors-box d-flex flex-row justify-content-around mb-1">
-                        <h3 class="cast"> Main Cast: </h3>
-                        <div class="row">
-                                <h4 class="directors">Directors: </h4>
-                        </div>
-                </div>
-
-                <div class="Trailer-video d-flex flex-row justify-content-between">
-                        <div class="trailer-heading flex-column d-flex pt-3">
-                                <h3>Trailer:</h3>
-                                <div class="movie-trailer-video"></div>
-                        </div>
-
-                        <div class="review-heading flex-column  d-flex justify-content-center">
-                                <div class="row pt-2">
-                                        <h3>Movie Poster:</h3>
+        <div class="container">
+                        <div class="container movie-screen">
+                                        <div class="movie-title-box">
+                                                <h1 class="title"><span id="movieName"></span></h1>
+                                                <p class="genre"></p>
+                                        </div>
+                        
+                                        <div class="info-container">
+                                                <p class="rating">Rating:</p>
+                                                <!-- <br> -->
+                                                <p class="runtime">Runtime:</p>
+                                                <!-- <br> -->
+                                                <p class="releaseDate">Release:</p>
+                                        <p class="synopsis">Summary: </p>
+                        
+                                        <div class="cast-directors-box ">
+                                                <p class="cast"> Main Cast: </p>
+                                        </div>
+                                        <div class="cast-directors-box ">
+                                                        <p class="directors">Directors: </p>
+                                                </div>
                                 </div>
-                                <div class=" pt-5  movie-poster"></div>
-                        </div>
-                </div>
+                                        <div class="trailer-video">
+                                                <div class="trailer-heading">
+                                                        <!-- <h3>Trailer:</h3> -->
+                                                        <div class="movie-trailer-video"></div>
+                                                        <div class="movie-poster"></div>
+                        
+                                                </div>
+                                        </div>
+                                </div>
         </div>
         <div class="container feeling_lucky">
-
-
-                <div class="movieGenres">
+                <div class=" row movieGenres">
                         <div class="movieList">
                                 <p>Pick a Genre: </p>
                         </div>
-                        <div class="row">
+                        <div class="row genrePicker">
                                 <div class="comedy movieCat col"><img src="./assets/images/Comedy.jpg" class="image"
-                                                alt="Comedy"></div>
+                                                alt="Comedy">
+                                                <a class="comedy" href="#">Comedy</a></div>
                                 <div class="horror movieCat col"><img src="./assets/images/horror.png" class="image"
-                                                alt="Horror"></div>
+                                                alt="Horror">
+                                                <a class="horror" href="#">Horror</a>
+                                        </div>
                                 <div class="romance movieCat col"><img src="./assets/images/romance.jpg" class="image"
-                                                alt="Romance"></div>
+                                                alt="Romance">
+                                                <a class="romance" href="#">Romance</a>
+                                        </div>
                                 <div class="action movieCat col"><img src="./assets/images/action.jpg" class="image"
-                                                alt="Action"></div>
+                                                alt="Action">
+                                                <a class="action" href="#">Action</a>
+                                        </div>
                                 <div class="sciFi movieCat col"><img src="./assets/images/science.jpg" class="image"
-                                                alt="Science Fiction"></div>
+                                                alt="Science Fiction">
+                                                <a class="sciFi" href="#">Science</a>
+                                        </div>
                                 <div class="drama movieCat col"><img src="./assets/images/drama.jpg" class="image"
-                                                alt="Drama"></div>
+                                                alt="Drama">
+                                                <a class="drama" href="#">Drama</a>
+                                        </div>
                         </div>
-                        <div class="row">
+                        <div class="row genrePicker">
                                 <div class="indie movieCat col"><img src="./assets/images/indie.jpg" class="image"
-                                                alt="Indie"></div>
+                                                alt="Indie">
+                                                <a class="indie" href="#">Indie</a>
+                                        </div>
                                 <div class="thriller movieCat col"><img src="./assets/images/thriller.jpg" class="image"
-                                                alt="Thriller"></div>
+                                                alt="Thriller">
+                                                <a class="thriller" href="#">Thriller</a>
+                                        </div>
                                 <div class="musical movieCat col"><img src="./assets/images/musical.jpg" class="image"
-                                                alt="Musical"></div>
+                                                alt="Musical">
+                                                <a class="musical" href="#">Musical</a>
+                                        </div>
                                 <div class="western movieCat col"><img src="./assets/images/western.jpg" class="image"
-                                                alt="Western"></div>
+                                                alt="Western">
+                                                <a class="western" href="#">Western</a>
+                                        </div>
                                 <div class="documentary movieCat col"><img src="./assets/images/doc.jpg" class="image"
-                                                alt="Documentary"></div>
+                                                alt="Documentary">
+                                                <a class="documentary" href="#">Documentary</a>
+                                        </div>
                                 <div class="fantasy movieCat col"><img src="./assets/images/fantasy.png" class="image"
                                                 alt="Fantasy">
+                                                <a class="fantasy" href="#">Fantasy</a>
                                 </div>
                         </div>
 
                 </div>
-
         </div>
-        <script src="" async defer></script>
+        <footer class="footer justify-content-center">
+                <span>
+                    Made with <i class="fa fa-heart pulse"></i> by <a href="https://codesbymo.github.io" target="_blank">CodesByMo</a>
+                </span>
+            </footer>
 </body>
-<footer class="footer d-flex flex-row justify-content-center"> COPYRIGHT STEAMsTACK $QUAD 2019</footer>
+<script src="" async defer></script>
 <script src="assets/javascript/app.js" async defer></script>
 
 </html>
