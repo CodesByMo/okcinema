@@ -160,7 +160,7 @@ function displayMovie(movie) {
     console.log(title + " xxxxxxxx");
 
     $("#movieName").text(title);
-    $(".genre").text("Genre: " + genre);
+    $(".genre").text(genre);
     $(".rating").text("Rating: " + rating);
     $(".runtime").text("Run Time: " + runTime);
     $(".releaseDate").text("Release Date: " + releaseDate);
