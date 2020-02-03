@@ -18,4 +18,3 @@ Simply click the "I'm feeling lucky" button, then choose a genre you're interest
 * **Jamie** - [Github](https://github.com/jbarton10)
 * **Morgan** - [Github](https://github.com/CodesByMo)
 * **Sean** - [Github](https://github.com/seankish)
-* **Latrese** 
